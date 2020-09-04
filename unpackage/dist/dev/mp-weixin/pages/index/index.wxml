@@ -1,0 +1,1 @@
+<view class="page-wrapper"><image src="{{brand.thumb}}" mode="widthFix"></image><view class="content"><block wx:for="{{brand.content}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><view class="p">{{item}}</view></block></block></view></view>

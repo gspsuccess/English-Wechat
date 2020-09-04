@@ -1,0 +1,56 @@
+.voice-wrapper {
+  margin: 32px auto 32px auto;
+  text-align: center;
+  vertical-align: middle;
+}
+.voice-wrapper .voice {
+  width: 240rpx;
+  height: 240rpx;
+}
+.voice-wrapper .content {
+  margin: 50rpx 50rpx 0 50rpx;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 32rpx;
+}
+.voice-wrapper .reply-wrapper {
+  margin: 50rpx 50rpx 0 50rpx;
+  text-align: left;
+}
+.voice-wrapper .reply-wrapper .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.voice-wrapper .reply-wrapper .option {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 24rpx;
+}
+.voice-wrapper .reply-wrapper .option input {
+  border-bottom: 1px solid #ddd;
+  margin-left: auto;
+  width: 100%;
+  text-align: center;
+}
+.btn-wrapper {
+  margin: 50rpx;
+}
+.btn-wrapper .tui-btn-box {
+  margin-bottom: 26rpx;
+}
+.answer-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.answer-wrapper text {
+  display: inline-block;
+  font-size: 48rpx;
+  margin-left: 32rpx;
+}
+

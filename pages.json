@@ -1,0 +1,175 @@
+{
+	"pages": [{
+            "path" : "pages/index/index",
+            "style" : {
+				"navigationBarTitleText":"品牌介绍"
+			}
+        }
+        ,{
+            "path" : "pages/exam/exam",
+            "style" : {
+				"navigationBarTitleText":"测试中心"
+			}
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" : {
+				"navigationBarTitleText":"我的"
+			}
+        }
+        ,{
+            "path" : "pages/exam/word/word",
+            "style" : {
+				"navigationBarTitleText":"单词测试"
+			}
+        }
+        ,{
+            "path" : "pages/exam/listen/listen",
+            "style" : {
+				"navigationBarTitleText":"听力测试"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/paper",
+            "style" : {
+				"navigationBarTitleText":"模拟题"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/listen-A/listen-A",
+            "style" : {
+				"navigationBarTitleText":"听力PartA"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/listen-B/listen-B",
+            "style" : {
+				"navigationBarTitleText":"听力PartB"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/read-A/read-A",
+            "style" : {
+				"navigationBarTitleText":"阅读PartA"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/read-B/read-B",
+            "style" : {
+				"navigationBarTitleText":"阅读PartB"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/write-A/write-A",
+            "style" : {
+				"navigationBarTitleText":"写作ParA"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/write-B/write-B",
+            "style" : {
+				"navigationBarTitleText":"写作PartB"
+			}
+        }
+        ,{
+            "path" : "pages/exam/paper/read-C/read-C",
+            "style" : {
+				"navigationBarTitleText":"阅读PartC"
+			}
+        }
+    ],
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"tui-(.*)": "@/components/thorui/tui-$1/tui-$1.vue"
+		}
+	},
+	"globalStyle": {
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#5677FC",
+		"navigationBarTitleText": "NETS英语服务平台",
+		"navigationBarTextStyle": "white",
+		"backgroundColor": "#fafafa",
+		"backgroundColorTop": "#fafafa",
+		"backgroundColorBottom": "#fafafa"
+	},
+	"tabBar": {
+		"color": "#666666",
+		"selectedColor": "#5677FC",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "品牌",
+				"iconPath": "static/images/tabbar/code_gray.png",
+				"selectedIconPath": "static/images/tabbar/code_active.png"
+			},
+			{
+				"pagePath": "pages/exam/exam",
+				"text": "测试",
+				"iconPath": "static/images/tabbar/extend_gray.png",
+				"selectedIconPath": "static/images/tabbar/extend_active.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我",
+				"iconPath": "static/images/tabbar/thor_gray.png",
+				"selectedIconPath": "static/images/tabbar/thor_active.png"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "模拟题", //模式名称
+				"path": "pages/exam/paper/paper", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "阅读PartC", //模式名称
+				"path": "pages/exam/paper/read-C/read-C", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "阅读PartB", //模式名称
+				"path": "pages/exam/paper/read-B/read-B", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "写作PartA", //模式名称
+				"path": "pages/exam/paper/write-A/write-A", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "写作PartB", //模式名称
+				"path": "pages/exam/paper/write-B/write-B", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "阅读PartA", //模式名称
+				"path": "pages/exam/paper/read-A/read-A", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "听力PartB", //模式名称
+				"path": "pages/exam/paper/listen-B/listen-B", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "听力PartA", //模式名称
+				"path": "pages/exam/paper/listen-A/listen-A", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "听力测试", //模式名称
+				"path": "pages/exam/listen/listen", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "单词测试", //模式名称
+				"path": "pages/exam/word/word", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

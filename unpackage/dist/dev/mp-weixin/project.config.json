@@ -1,0 +1,95 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "minified": true,
+    "postcss": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wx153b532cc2706381",
+  "projectname": "English Wechat",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "name": "模拟题",
+          "query": "",
+          "id": 0,
+          "pathName": "pages/exam/paper/paper"
+        },
+        {
+          "name": "阅读PartC",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/exam/paper/read-C/read-C"
+        },
+        {
+          "name": "阅读PartB",
+          "query": "",
+          "id": 2,
+          "pathName": "pages/exam/paper/read-B/read-B"
+        },
+        {
+          "name": "写作PartA",
+          "query": "",
+          "id": 3,
+          "pathName": "pages/exam/paper/write-A/write-A"
+        },
+        {
+          "name": "写作PartB",
+          "query": "",
+          "id": 4,
+          "pathName": "pages/exam/paper/write-B/write-B"
+        },
+        {
+          "name": "阅读PartA",
+          "query": "",
+          "id": 5,
+          "pathName": "pages/exam/paper/read-A/read-A"
+        },
+        {
+          "name": "听力PartB",
+          "query": "",
+          "id": 6,
+          "pathName": "pages/exam/paper/listen-B/listen-B"
+        },
+        {
+          "name": "听力PartA",
+          "query": "",
+          "id": 7,
+          "pathName": "pages/exam/paper/listen-A/listen-A"
+        },
+        {
+          "name": "听力测试",
+          "query": "",
+          "id": 8,
+          "pathName": "pages/exam/listen/listen"
+        },
+        {
+          "name": "单词测试",
+          "query": "",
+          "id": 9,
+          "pathName": "pages/exam/word/word"
+        }
+      ]
+    }
+  }
+}

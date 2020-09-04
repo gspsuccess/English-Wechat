@@ -1,0 +1,44 @@
+.page-container {
+  padding: 50rpx;
+}
+.header {
+  line-height: 1.8;
+}
+.btn-box {
+  padding: 30rpx;
+}
+.btn-box:first-child {
+  margin-top: 50rpx;
+}
+.d-container {
+  width: 400rpx;
+  padding: 48rpx 30rpx;
+}
+.d-container .tree {
+  margin-bottom: 64rpx;
+}
+.main .voice-container {
+  margin: 32px auto 32px auto;
+  text-align: center;
+  vertical-align: middle;
+}
+.main .voice-container .voice {
+  width: 240rpx;
+  height: 240rpx;
+}
+.main .blank-container .blank-item {
+  margin-bottom: 24rpx;
+  line-height: 1.8;
+}
+.main .blank-container .blank-content {
+  margin: 24rpx 0;
+}
+.main .blank-container .blank-content image {
+  width: 650rpx;
+}
+.main .blank-answer-container textarea {
+  background: #f0f0f0;
+  padding: 25rpx;
+  width: 600rpx;
+}
+

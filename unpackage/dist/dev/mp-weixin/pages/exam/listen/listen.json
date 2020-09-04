@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "听力测试",
+  "usingComponents": {
+    "tui-icon": "/components/thorui/tui-icon/tui-icon",
+    "tui-button": "/components/thorui/tui-button/tui-button"
+  }
+}
