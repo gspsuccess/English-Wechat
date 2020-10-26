@@ -5,6 +5,12 @@ export default {
 		// #ifdef APP-PLUS
 		/* 5+环境锁定屏幕方向 */
 		plus.screen.lockOrientation('portrait-primary'); //锁定
+	
+		uni.login({
+			success: (res) => {
+				console.log(res.code)
+			}
+		})
 		
 		/* 5+环境升级提示 */
 		//app检测更新
@@ -34,6 +40,20 @@ export default {
 		// #endif
 		
 		// #ifdef MP-WEIXIN
+		let thorui_token = uni.getStorageSync('thorui_token')
+		if(!thorui_token){
+			uni.login({
+				success: (res) => {
+					this.tui.request('/minisignin','POST',{code:res.code}).then((res) => {
+						if(res.code === 1){
+							uni.setStorageSync('thorui_token','Bearer ' + res.results.token)
+						} else {
+							this.tui.toast('获取用户信息失败')
+						}
+					})
+				}
+			})
+		}
 		if (wx.canIUse('getUpdateManager')) {
 			const updateManager = wx.getUpdateManager();
 			updateManager.onCheckForUpdate(function(res) {

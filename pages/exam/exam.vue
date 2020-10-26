@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<block v-for="(item,index) in cards" :key="index">
-		<tui-card class="tui-card" :title="item.title" :tag="item.tag" :header="item.header" @click="detail(item.name)">
+		<tui-card class="tui-card" :title="item.title" :header="item.header" @click="detail(item.name)">
 			<template v-slot:body>
 				<view class="tui-article">
 					<image :src="item.banner.url" class="tui-article-img"></image>
@@ -9,7 +9,7 @@
 			</template>
 			<template v-slot:footer>
 				<view class="tui-default tui-flex">
-					<text>{{item.count}}</text>
+					<text>点击进入</text>
 					<tui-icon name="arrowright" :size="20" color="#ccc" class="tui-right"></tui-icon>
 				</view>
 			</template>
@@ -24,21 +24,17 @@
 			return {
 				cards: [
 					{
-						name:'paper',
+						name:'true',
 						banner: {
 							url: "http://img.intelirri.com/paper.jpg"
 						},
 						title: {
-							text: "NETS模拟问卷"
-						},
-						tag: {
-							text: "2308人已测试"
+							text: "NETS真题问卷"
 						},
 						header: {
 							line: true,
 							bgcolor: "#fafafa"
-						},
-						count:'212份模拟试卷'
+						}
 					},
 					{
 						name:'listen',
@@ -48,14 +44,10 @@
 						title: {
 							text: "NETS听力能力辅助测试"
 						},
-						tag: {
-							text: "2118人已测试"
-						},
 						header: {
 							line: true,
 							bgcolor: "#fafafa"
-						},
-						count:'4212段听力素材'
+						}
 					},
 					{
 						name:'word',
@@ -65,14 +57,10 @@
 						title: {
 							text: "NETS单词能力辅助测试"
 						},
-						tag: {
-							text: "4598人已测试"
-						},
 						header: {
 							line: true,
 							bgcolor: "#fafafa"
-						},
-						count:'10988个英语单词'
+						}
 					}
 				]
 			}

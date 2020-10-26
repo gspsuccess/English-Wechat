@@ -4,6 +4,8 @@ import store from './store'
 import tui from './common/httpRequest'
 import router from './common/router'
 import util from './common/util'
+import './common/stylus/common.styl'
+
 Vue.config.productionTip = false
 // #ifdef H5
 window.QQmap = null;
@@ -26,6 +28,9 @@ Vue.prototype.$store = store
 Vue.prototype.router = router
 Vue.prototype.util = util
 App.mpType = 'app'
+
+import * as filters from './common/filters.js'
+Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 
 const app = new Vue({
 	store,

@@ -1,45 +1,93 @@
 <template>
-	<view>
+	<view v-if="current.detail">
+		<view class="time-wrapper">
+			{{timetranFormat}}
+		</view>
 		<view class="voice-wrapper">
 			<image class="voice" :src="voice" mode="" @click="broadcast()"></image>
-			<input type="text" placeholder="输入听到的单词" class="underline-input" v-model="answer" />
+			<view class="content">{{current.detail|formatContent}}</view>
+			<view class="reply-wrapper">
+				<view class="title">请作答：</view>
+				<view class="option"><input type="text" v-model="answer"></view>
+			</view>
 		</view>
 		<view class="answer-wrapper" v-if="showResult">
 			<tui-icon :name="item.name" :size="item.size" :color="item.color || '#999'"></tui-icon>
-			<text>{{word.name}}</text>
+			<text>{{current.rightanswer}}</text>
 		</view>
 		<view class="btn-wrapper">
 			<view class="tui-btn-box">
-				<tui-button @click="submit">提交</tui-button>
+				<tui-button @click="submit" :loading="unusable" :disabled="unusable">{{submintTitie}}</tui-button>
 			</view>
-			<view class="tui-btn-box">
-				<tui-button type="white" @click="next" class="mt12">下一个</tui-button>
-			</view>
+		</view>
+		<view class="count-wrapper">
+			{{index+1}} / {{list.length}}
 		</view>
 	</view>
 </template>
 
 <script>
-import {Config} from '@/common/config'	
+import {Config} from '@/common/config'
 const myaudio = wx.createInnerAudioContext();
 const voiceImgs = Config.voiceImgs
 const results = Config.results
+
 export default {
+	filters:{
+		formatContent(value){
+			return value.replace(/{!}/g,'_______')
+		}
+	},
 	data() {
 		return {
 			showResult:false,
+			list:[],
+			index:0,
 			answer:'',
-			word: {
-				name: 'good',
-				voicefile: 'http://api.zesi.com.cn/word.mp3'
-			},
 			voice:voiceImgs.stop,
-			item: results.ok
+			item: results.ok,
+			unusable:false,
+			timetran:0,
+			result:{
+				rightnum:0,
+				errornum:0,
+				usetime:0,
+				level:5
+			},
+			interval:''
 		};
 	},
+	onLoad() {
+		this.getList()
+		this.getCurrentTime()
+	},
+	onUnload() {
+		clearInterval(this.interval)
+	},
+	computed:{
+		current(){
+			if(this.list.length > 0){
+				return this.list[this.index]
+			}
+			return {}
+		},
+		submintTitie(){
+			return this.index < 19?'提交并进入下一题':'提交测试结果'
+		},
+		timetranFormat(){
+			return this.util.formatSeconds(this.timetran)
+		}
+	},
 	methods: {
+		getList(){
+			this.tui.request('/user/wordtest','POST',{level:5}).then((res) => {
+				if(res.code === Config.SUCCESS){
+					this.list = res.results.data
+				}
+			})
+		},
 		broadcast() {
-			myaudio.src = this.word.voicefile;
+			myaudio.src = this.current.voicefile;
 			myaudio.autoplay = true;
 
 			myaudio.play();
@@ -54,52 +102,62 @@ export default {
 				this.voice = voiceImgs.stop
 			});
 		},
-		
 		submit(){
-			this.showResult = true
-			if(this.word.name === this.answer){
-				this.item = results.ok
+			if(this.index < 19){
+				if(!this.answer){
+					this.tui.toast('请先提交本题答案')
+				} else {
+					this._action()
+					setTimeout(()=>this._next(),1000)
+				}
 			} else {
-				this.item = results.no
+				this._action()
+				clearInterval(this.interval)
+				this.result.usetime = this.timetran
+				this.tui.request('/user/wordresultcreate','POST',this.result).then((res) => {
+					if(res.code === Config.SUCCESS){
+						let content = `本次测试已提交，正确${this.result.rightnum}个，错误${this.result.errornum}个`
+						uni.showModal({
+							title:'测试结果',
+							content:content,
+							success: (res) => {
+								if(res.confirm){
+									uni.switchTab({
+										url:'/pages/exam/exam'
+									})
+								}
+							}
+						})
+					}
+				})
 			}
 		},
-		
-		next(){
-			this.word = {
-				name: 'worse',
-				voicefile: 'http://api.zesi.com.cn/word.mp3'
+		_action(){
+			this.showResult = true
+			this.unusable = true
+			if(this.current.rightanswer === this.answer){
+				this.item = results.ok
+				this.result.rightnum += 1
+			} else {
+				this.item = results.no
+				this.result.errornum += 1
 			}
+		},
+		_next(){
+			this.index += 1
 			this.answer = ''
 			this.showResult = false
+			this.unusable = false
+		},
+		getCurrentTime(){
+			this.interval = setInterval(() => {
+				this.timetran ++
+			},1000)
 		}
 	}
-};
+}
 </script>
 
 <style lang="stylus">
-.voice-wrapper
-	margin 32px auto 32px auto
-	text-align center
-	vertical-align middle
-	.voice
-		width 240rpx
-		height 240rpx
-	.underline-input
-		margin 50rpx 50rpx 0 50rpx
-		height 64px
-		line-height 64px
-		font-size 20px
-		border-bottom 1px solid #ddd
-.btn-wrapper
-	margin 50rpx
-	.tui-btn-box
-		margin-bottom 26rpx
-.answer-wrapper
-	display flex
-	text-align center
-	justify-content center
-	text
-		display inline-block
-		font-size 48rpx
-		margin-left 32rpx
+
 </style>

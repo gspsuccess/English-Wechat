@@ -7672,9 +7672,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!******************************************************!*\
-  !*** D:/HBuilder Projects/English Wechat/pages.json ***!
-  \******************************************************/
+/*!***************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/pages.json ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7815,9 +7815,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 11 */
-/*!**********************************************************!*\
-  !*** D:/HBuilder Projects/English Wechat/store/index.js ***!
-  \**********************************************************/
+/*!*******************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/store/index.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9642,9 +9642,9 @@ var index_esm = {
 
 /***/ }),
 /* 16 */
-/*!*****************************************************************!*\
-  !*** D:/HBuilder Projects/English Wechat/common/httpRequest.js ***!
-  \*****************************************************************/
+/*!**************************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/common/httpRequest.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9657,7 +9657,7 @@ var index_esm = {
 var tui = {
   //接口地址
   interfaceUrl: function interfaceUrl() {
-    return 'https://www.thorui.cn';
+    return 'https://chinanets.cn';
     //return 'https://test.thorui.cn'
     //return 'https://uat.thorui.cn'
     // return 'https://prod.thorui.cn'
@@ -9857,9 +9857,9 @@ tui;exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!************************************************************!*\
-  !*** D:/HBuilder Projects/English Wechat/common/router.js ***!
-  \************************************************************/
+/*!*********************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/common/router.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9870,10 +9870,13 @@ tui;exports.default = _default;
 var routerPath = {
   'index': '/pages/index/index',
   'my': '/pages/my/my',
+  'my-listen': '/pages/my/listen/listen',
+  'my-word': '/pages/my/word/word',
   'exam': '/pages/exam/exam',
   'exam-listen': '/pages/exam/listen/listen',
   'exam-word': '/pages/exam/word/word',
   'exam-paper': '/pages/exam/paper/paper',
+  'exam-true': '/pages/exam/true/true',
   'exam-paper-listen-A': '/pages/exam/paper/listen-A/listen-A',
   'exam-paper-listen-B': '/pages/exam/paper/listen-B/listen-B',
   'exam-paper-read-A': '/pages/exam/paper/read-A/read-A',
@@ -9932,23 +9935,279 @@ module.exports = {
 
 /***/ }),
 /* 18 */
+/*!*******************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/common/util.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _createForOfIteratorHelper(o) {if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var it,normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * 获取数组中的某一列
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * @param {Object} arr
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * @param {Object} column
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
+function arrayColumn(arr, column) {
+  return arr.map(function (x) {return x[column];});
+}
+
+/**
+   * 获取当前时间戳（秒）
+   */
+function getTimeStamp() {
+  return Date.parse(new Date()) / 1000;
+}
+
+/**
+   * @param {Object} str
+   * @param {Object} re
+   */
+function getMatchNumbers(str, re) {
+  return ((str || '').match(re) || []).length;
+}
+
+/**
+   * 格式化时间（秒变为时分秒)
+   * @param {Object} value
+   */
+function formatSeconds(value) {
+  var secondTime = parseInt(value); // 秒
+  var minuteTime = 0; // 分
+  var hourTime = 0; // 小时
+  if (secondTime > 60) {//如果秒数大于60，将秒数转换成整数
+    //获取分钟，除以60取整数，得到整数分钟
+    minuteTime = parseInt(secondTime / 60);
+    //获取秒数，秒数取佘，得到整数秒数
+    secondTime = parseInt(secondTime % 60);
+    //如果分钟大于60，将分钟转换成小时
+    if (minuteTime > 60) {
+      //获取小时，获取分钟除以60，得到整数小时
+      hourTime = parseInt(minuteTime / 60);
+      //获取小时后取佘的分，获取分钟除以60取佘的分
+      minuteTime = parseInt(minuteTime % 60);
+    }
+  }
+
+  if (secondTime < 10) {
+    secondTime = '0' + secondTime;
+  }
+  if (minuteTime < 10) {
+    minuteTime = '0' + minuteTime;
+  }
+  if (hourTime < 10) {
+    hourTime = '0' + hourTime;
+  }
+
+  var result = hourTime + ':' + minuteTime + ':' + secondTime;
+
+  return result;
+}
+
+/**
+   * 格式化试卷内容
+   * @param {Object} paper
+   */
+function formatPaper(paper) {
+  //听力PartA格式化
+  var _iterator = _createForOfIteratorHelper(paper.thispaper.thisla.voice),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var item = _step.value;var _iterator3 = _createForOfIteratorHelper(
+      item.info),_step3;try {for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {var citem = _step3.value;
+          var select = JSON.parse(citem.select);
+
+          var items = [];
+          for (var _key2 in select) {
+            items.push({
+              option: _key2,
+              text: _key2 + '. ' + select[_key2] });
+
+          }
+          citem.select_format = items;
+        }} catch (err) {_iterator3.e(err);} finally {_iterator3.f();}
+    }
+
+    //阅读PartA格式化
+  } catch (err) {_iterator.e(err);} finally {_iterator.f();}paper.thispaper.thisra.select = JSON.parse(paper.thispaper.thisra.select);
+  var items_ra = [];
+  for (var key in paper.thispaper.thisra.select) {
+    items_ra.push({
+      key: key,
+      value: paper.thispaper.thisra.select[key] });
+
+  }
+  paper.thispaper.thisra.select_format = items_ra;
+
+  //阅读PartB格式化
+  var _iterator2 = _createForOfIteratorHelper(paper.thispaper.thisrb.text),_step2;try {for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {var _item = _step2.value;var _iterator4 = _createForOfIteratorHelper(
+      _item.info),_step4;try {for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {var _citem = _step4.value;
+          var _select = JSON.parse(_citem.select);
+
+          var _items = [];
+          for (var _key3 in _select) {
+            _items.push({
+              option: _key3,
+              text: _key3 + '. ' + _select[_key3] });
+
+          }
+          _citem.select_format = _items;
+        }} catch (err) {_iterator4.e(err);} finally {_iterator4.f();}
+    }} catch (err) {_iterator2.e(err);} finally {_iterator2.f();}
+
+  paper.thispaper.thisrc.select = JSON.parse(paper.thispaper.thisrc.select);
+  var items_rc = [];
+  for (var _key in paper.thispaper.thisrc.select) {
+    items_rc.push({
+      key: _key,
+      value: paper.thispaper.thisrc.select[_key] });
+
+  }
+  paper.thispaper.thisrc.select_format = items_rc;
+
+  return paper;
+}
+
+/**
+   * 格式化试卷导航菜单
+   * @param {Object} paper
+   */
+function formatPaperMenu(paper) {
+  var menuList = [
+  {
+    id: 1,
+    name: '听力',
+    namekey: 'listen',
+    children: [
+    {
+      id: 11,
+      name: 'Part A',
+      namekey: 'listen-A' },
+
+    {
+      id: 12,
+      name: 'Part B',
+      namekey: 'listen-B' }] },
+
+
+
+  {
+    id: 2,
+    name: '阅读',
+    namekey: 'read',
+    children: [
+    {
+      id: 21,
+      name: 'Part A',
+      namekey: 'read-A' },
+
+    {
+      id: 22,
+      name: 'Part B',
+      namekey: 'read-B' },
+
+    {
+      id: 23,
+      name: 'Part C',
+      namekey: 'read-C' }] },
+
+
+
+  {
+    id: 3,
+    name: '写作',
+    namekey: 'write',
+    children: [
+    {
+      id: 31,
+      name: 'Part A',
+      namekey: 'write-A' },
+
+    {
+      id: 32,
+      name: 'Part B',
+      namekey: 'write-B' }] }];
+
+
+
+
+
+  //获取听力A的子菜单项
+  var thisla_children = [];
+  var thisla_first_index = 0;
+  var thisla_last_index = 0;
+  paper.thisla.voice.forEach(function (item, index) {
+    thisla_first_index = index * item.info.length + 1;
+    thisla_last_index += item.info.length;
+    thisla_children.push({
+      id: 111 + index,
+      name: thisla_first_index + '-' + thisla_last_index,
+      namekey: 'listen-A' });
+
+  });
+  menuList[0].children[0].children = thisla_children;
+
+  //获取阅读B的子菜单项
+  var thisrb_children = [];
+  var thisrb_first_index = 0;
+  var thisrb_last_index = 0;
+  paper.thisrb.text.forEach(function (item, index) {
+    thisrb_first_index = index * item.info.length + 1;
+    thisrb_last_index += item.info.length;
+    thisrb_children.push({
+      id: 221 + index,
+      name: thisrb_first_index + '-' + thisrb_last_index,
+      namekey: 'read-B' });
+
+  });
+  menuList[1].children[1].children = thisrb_children;
+
+  return menuList;
+}var _default =
+
+{
+  arrayColumn: arrayColumn,
+  getTimeStamp: getTimeStamp,
+  getMatchNumbers: getMatchNumbers,
+  formatSeconds: formatSeconds,
+  formatPaper: formatPaper,
+  formatPaperMenu: formatPaperMenu };exports.default = _default;
+
+/***/ }),
+/* 19 */
+/*!******************************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/common/stylus/common.styl ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+    if(false) { var cssReload; }
+  
+
+/***/ }),
+/* 20 */
 /*!**********************************************************!*\
-  !*** D:/HBuilder Projects/English Wechat/common/util.js ***!
+  !*** D:/HBuilder Projects/Nets考试中心小程序/common/filters.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function arrayColumn(arr, column) {
-  return arr.map(function (x) {return x[column];});
-}var _default =
+var _util = _interopRequireDefault(__webpack_require__(/*! ./util.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-{
-  arrayColumn: arrayColumn };exports.default = _default;
+exports.formatSeconds = function (value) {
+  return _util.default.formatSeconds(value);
+};
+
+exports.formatDateJoined = function (value) {
+  return value.substr(0, 19).replace('T', ' ');
+};
+
+exports.formatContent = function (value) {
+  if (value) {
+    return value.replace(/{!}/g, '______');
+  }
+  return value;
+};
 
 /***/ }),
-/* 19 */,
-/* 20 */,
 /* 21 */,
 /* 22 */,
 /* 23 */,
@@ -9977,10 +10236,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 46 */,
 /* 47 */,
 /* 48 */,
-/* 49 */
-/*!************************************************************!*\
-  !*** D:/HBuilder Projects/English Wechat/common/config.js ***!
-  \************************************************************/
+/* 49 */,
+/* 50 */,
+/* 51 */
+/*!*********************************************************!*\
+  !*** D:/HBuilder Projects/Nets考试中心小程序/common/config.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9989,6 +10250,8 @@ function Config() {"use strict";_classCallCheck(this, Config);
 
 };
 
+
+Config.SUCCESS = 1;
 
 Config.voiceImgs = {
   stop: 'http://img.intelirri.com/voice.png',

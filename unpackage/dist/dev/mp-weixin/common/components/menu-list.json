@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tui-fab": "/components/thorui/tui-fab/tui-fab",
+    "tui-drawer": "/components/thorui/tui-drawer/tui-drawer",
+    "mix-tree": "/components/mix-tree/mix-tree",
+    "tui-button": "/components/thorui/tui-button/tui-button"
+  }
+}

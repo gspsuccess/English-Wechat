@@ -5,10 +5,13 @@
 const routerPath = {
 	'index': '/pages/index/index',
 	'my': '/pages/my/my',
+	'my-listen': '/pages/my/listen/listen',
+	'my-word': '/pages/my/word/word',
 	'exam': '/pages/exam/exam',
 	'exam-listen': '/pages/exam/listen/listen',
 	'exam-word': '/pages/exam/word/word',
 	'exam-paper': '/pages/exam/paper/paper',
+	'exam-true': '/pages/exam/true/true',
 	'exam-paper-listen-A': '/pages/exam/paper/listen-A/listen-A',
 	'exam-paper-listen-B': '/pages/exam/paper/listen-B/listen-B',
 	'exam-paper-read-A': '/pages/exam/paper/read-A/read-A',

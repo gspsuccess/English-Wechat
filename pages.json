@@ -77,6 +77,24 @@
 				"navigationBarTitleText":"阅读PartC"
 			}
         }
+        ,{
+            "path" : "pages/exam/true/true",
+            "style" : {
+				"navigationBarTitleText":"真题列表"
+			}
+        }
+        ,{
+            "path" : "pages/my/word/word",
+            "style" : {
+				"navigationBarTitleText":"单词测试记录"
+			}
+        }
+        ,{
+            "path" : "pages/my/listen/listen",
+            "style" : {
+				"navigationBarTitleText":"听力测试记录"
+			}
+        }
     ],
 	"easycom": {
 		"autoscan": true,
@@ -87,7 +105,7 @@
 	"globalStyle": {
 		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#5677FC",
-		"navigationBarTitleText": "NETS英语服务平台",
+		"navigationBarTitleText": "NETS考试中心",
 		"navigationBarTextStyle": "white",
 		"backgroundColor": "#fafafa",
 		"backgroundColorTop": "#fafafa",
@@ -100,20 +118,20 @@
 		"list": [{
 				"pagePath": "pages/index/index",
 				"text": "品牌",
-				"iconPath": "static/images/tabbar/code_gray.png",
-				"selectedIconPath": "static/images/tabbar/code_active.png"
+				"iconPath": "static/images/tabbar/company_gray.png",
+				"selectedIconPath": "static/images/tabbar/company_active.png"
 			},
 			{
 				"pagePath": "pages/exam/exam",
 				"text": "测试",
-				"iconPath": "static/images/tabbar/extend_gray.png",
-				"selectedIconPath": "static/images/tabbar/extend_active.png"
+				"iconPath": "static/images/tabbar/exam_gray.png",
+				"selectedIconPath": "static/images/tabbar/exam_active.png"
 			},
 			{
 				"pagePath": "pages/my/my",
 				"text": "我",
-				"iconPath": "static/images/tabbar/thor_gray.png",
-				"selectedIconPath": "static/images/tabbar/thor_active.png"
+				"iconPath": "static/images/tabbar/my_gray.png",
+				"selectedIconPath": "static/images/tabbar/my_active.png"
 			}
 		]
 	},
@@ -121,9 +139,29 @@
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [
 			{
+				"name": "我", //模式名称
+				"path": "pages/my/my", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "我的听力测试", //模式名称
+				"path": "pages/my/listen/listen", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "我的单词测试", //模式名称
+				"path": "pages/my/word/word", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "真题列表", //模式名称
+				"path": "pages/exam/true/true", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
 				"name": "模拟题", //模式名称
 				"path": "pages/exam/paper/paper", //启动页面，必选
-				"query": "" //启动参数，在页面的onLoad函数里面得到
+				"query": "id=1" //启动参数，在页面的onLoad函数里面得到
 			},
 			{
 				"name": "阅读PartC", //模式名称

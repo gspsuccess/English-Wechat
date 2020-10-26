@@ -13,6 +13,7 @@
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
 	        flex-direction: column;
+	background: #5677FC;
 }
 .bg-img {
 	position: absolute;
@@ -74,6 +75,19 @@
 	width: 160rpx;
 	height: 160rpx;
 	border-radius: 50%;
+	-webkit-align-self: center;
+	        align-self: center;
+	position: relative;
+	margin-top:80rpx;
+}
+.icon{
+	position: absolute;
+	height: 160rpx;
+	width: 160rpx;
+	border-radius: 50%;
+	border: 36rpx solid #5677FC;
+	margin-top:80rpx;
+	top:-36rpx;
 	-webkit-align-self: center;
 	        align-self: center;
 }

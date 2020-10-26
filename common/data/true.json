@@ -1,0 +1,608 @@
+{
+    "code": 1,
+    "msg": "ok",
+    "results": {
+        "selectanwser": null,
+        "lbanwser": null,
+        "waanwser": null,
+        "wbanwser": null,
+        "usetime": 0,
+        "thispaper": {
+            "thisla": {
+                "voice": [
+                    {
+                        "name": "nidd的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 863,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 864,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 865,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 866,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 867,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 868,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 869,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 870,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 871,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 872,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 873,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 874,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 875,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 876,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 877,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 878,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 879,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 880,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "声音的名字",
+                        "voicefile": "声音文件",
+                        "info": [
+                            {
+                                "id": 881,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 0
+                            },
+                            {
+                                "id": 882,
+                                "select": "{\"a\": 1, \"b\": \"cc\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "答案解析",
+                                "value": 10,
+                                "location": 1
+                            }
+                        ]
+                    }
+                ],
+                "id": 65,
+                "is_deleted": true,
+                "tureid_id": 1
+            },
+            "thislb": {
+                "id": 13,
+                "tureid_id": 1,
+                "is_deleted": false,
+                "name": "sssssss",
+                "voicefile": "/root/LYXT/all_media/uploadVoice/N5/N5/2020-09-2209:14:19sing.mp3",
+                "detail": "Blue is a cool color. The traditional {!} in the United States is the opposite of red hot music. Blue is {!} and soulful. The color green is natural for trees and grass. But it {!} for humans. A person who {!} may say she feels a little green. A passenger on a boat who is feeling sick from high waves may look very green. The color black is used often in expressions. People describe a day in which everything goes wrong as {!}. The date of a tragedy is remembered as a black day.",
+                "templetanswer": "A,B,C,D,E",
+                "value": 5,
+                "thispoint__info": null
+            },
+            "thisra": {
+                "id": 23,
+                "detail": "<div>\n<div>dfgf{!}dfgfsd{!}dgfg{!}fsdg{!}dfd{!}fgds{!}fg{!}sdfg{!}dfg{!}fdg{!}fdg</div>\n</div>",
+                "select": "{\"A\": \"A\", \"B\": \"B\", \"C\": \"C\", \"D\": \"D\", \"E\": \"A\", \"F\": \"DS\", \"G\": \"H\", \"H\": \"H\", \"I\": \"SD\", \"J\": \"FDS\", \"K\": \"FDS\", \"L\": \"SD\", \"M\": \"SSDF\", \"N\": \"FDS\", \"O\": \"SDF\"}",
+                "is_deleted": false,
+                "tureid_id": 1,
+                "info": [
+                    {
+                        "id": 189,
+                        "thispoint__info": null,
+                        "right": "A",
+                        "analysis": "A",
+                        "value": 5,
+                        "location": 1
+                    },
+                    {
+                        "id": 190,
+                        "thispoint__info": null,
+                        "right": "B",
+                        "analysis": "B",
+                        "value": 5,
+                        "location": 2
+                    },
+                    {
+                        "id": 191,
+                        "thispoint__info": null,
+                        "right": "C",
+                        "analysis": "C",
+                        "value": 5,
+                        "location": 3
+                    },
+                    {
+                        "id": 192,
+                        "thispoint__info": null,
+                        "right": "D",
+                        "analysis": "D",
+                        "value": 5,
+                        "location": 4
+                    },
+                    {
+                        "id": 193,
+                        "thispoint__info": null,
+                        "right": "E",
+                        "analysis": "E",
+                        "value": 5,
+                        "location": 5
+                    },
+                    {
+                        "id": 194,
+                        "thispoint__info": null,
+                        "right": "F",
+                        "analysis": "F",
+                        "value": 5,
+                        "location": 6
+                    },
+                    {
+                        "id": 195,
+                        "thispoint__info": null,
+                        "right": "G",
+                        "analysis": "G",
+                        "value": 5,
+                        "location": 7
+                    },
+                    {
+                        "id": 196,
+                        "thispoint__info": null,
+                        "right": "A",
+                        "analysis": "A",
+                        "value": 5,
+                        "location": 8
+                    },
+                    {
+                        "id": 197,
+                        "thispoint__info": null,
+                        "right": "B",
+                        "analysis": "B",
+                        "value": 5,
+                        "location": 9
+                    },
+                    {
+                        "id": 198,
+                        "thispoint__info": null,
+                        "right": "C",
+                        "analysis": "C",
+                        "value": 5,
+                        "location": 10
+                    }
+                ]
+            },
+            "thisrb": {
+                "text": [
+                    {
+                        "id": 27,
+                        "declare": null,
+                        "detail": "<p>A</p>",
+                        "info": [
+                            {
+                                "id": 120,
+                                "name": "A",
+                                "select": "{\"A\": \"A\", \"B\": \"A\", \"C\": \"A\", \"D\": \"A\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "A",
+                                "value": 5,
+                                "location": 1
+                            },
+                            {
+                                "id": 121,
+                                "name": "A",
+                                "select": "{\"A\": \"A\", \"B\": \"A\", \"C\": \"A\", \"D\": \"A\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "A",
+                                "value": 5,
+                                "location": 2
+                            },
+                            {
+                                "id": 122,
+                                "name": "A",
+                                "select": "{\"A\": \"A\", \"B\": \"A\", \"C\": \"A\", \"D\": \"A\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "A",
+                                "value": 5,
+                                "location": 3
+                            },
+                            {
+                                "id": 123,
+                                "name": "A",
+                                "select": "{\"A\": \"A\", \"B\": \"A\", \"C\": \"A\", \"D\": \"A\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "A",
+                                "value": 5,
+                                "location": 4
+                            },
+                            {
+                                "id": 124,
+                                "name": "A",
+                                "select": "{\"A\": \"A\", \"B\": \"A\", \"C\": \"A\", \"D\": \"A\"}",
+                                "thispoint__info": null,
+                                "right": "A",
+                                "analysis": "A",
+                                "value": 5,
+                                "location": 5
+                            }
+                        ]
+                    },
+                    {
+                        "id": 28,
+                        "declare": null,
+                        "detail": "<p>B</p>",
+                        "info": [
+                            {
+                                "id": 125,
+                                "name": "B",
+                                "select": "{\"A\": \"B\", \"B\": \"B\", \"C\": \"B\", \"D\": \"B\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "B",
+                                "value": 5,
+                                "location": 1
+                            },
+                            {
+                                "id": 126,
+                                "name": "B",
+                                "select": "{\"A\": \"B\", \"B\": \"B\", \"C\": \"B\", \"D\": \"B\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "B",
+                                "value": 5,
+                                "location": 2
+                            },
+                            {
+                                "id": 127,
+                                "name": "B",
+                                "select": "{\"A\": \"B\", \"B\": \"B\", \"C\": \"B\", \"D\": \"B\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "B",
+                                "value": 5,
+                                "location": 3
+                            },
+                            {
+                                "id": 128,
+                                "name": "B",
+                                "select": "{\"A\": \"B\", \"B\": \"B\", \"C\": \"B\", \"D\": \"B\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "B",
+                                "value": 5,
+                                "location": 4
+                            },
+                            {
+                                "id": 129,
+                                "name": "B",
+                                "select": "{\"A\": \"B\", \"B\": \"B\", \"C\": \"B\", \"D\": \"B\"}",
+                                "thispoint__info": null,
+                                "right": "B",
+                                "analysis": "B",
+                                "value": 5,
+                                "location": 5
+                            }
+                        ]
+                    },
+                    {
+                        "id": 29,
+                        "declare": null,
+                        "detail": "<p>C</p>",
+                        "info": [
+                            {
+                                "id": 130,
+                                "name": "C",
+                                "select": "{\"A\": \"C\", \"B\": \"C\", \"C\": \"C\", \"D\": \"C\"}",
+                                "thispoint__info": null,
+                                "right": "C",
+                                "analysis": "C",
+                                "value": 5,
+                                "location": 1
+                            },
+                            {
+                                "id": 131,
+                                "name": "C",
+                                "select": "{\"A\": \"C\", \"B\": \"C\", \"C\": \"C\", \"D\": \"C\"}",
+                                "thispoint__info": null,
+                                "right": "C",
+                                "analysis": "C",
+                                "value": 5,
+                                "location": 2
+                            },
+                            {
+                                "id": 132,
+                                "name": "C",
+                                "select": "{\"A\": \"C\", \"B\": \"C\", \"C\": \"C\", \"D\": \"C\"}",
+                                "thispoint__info": null,
+                                "right": "C",
+                                "analysis": "C",
+                                "value": 5,
+                                "location": 3
+                            },
+                            {
+                                "id": 133,
+                                "name": "C",
+                                "select": "{\"A\": \"C\", \"B\": \"C\", \"C\": \"C\", \"D\": \"C\"}",
+                                "thispoint__info": null,
+                                "right": "C",
+                                "analysis": "C",
+                                "value": 5,
+                                "location": 4
+                            },
+                            {
+                                "id": 134,
+                                "name": "C",
+                                "select": "{\"A\": \"C\", \"B\": \"C\", \"C\": \"C\", \"D\": \"C\"}",
+                                "thispoint__info": null,
+                                "right": "C",
+                                "analysis": "C",
+                                "value": 5,
+                                "location": 5
+                            }
+                        ]
+                    }
+                ],
+                "id": 11,
+                "is_deleted": false,
+                "tureid_id": 1
+            },
+            "thisrc": {
+                "id": 20,
+                "declare": "ZCVXZZX",
+                "one": "<p>ZXVC</p>",
+                "two": "<p>ZV</p>",
+                "three": "<p>ZVCZ</p>",
+                "four": "<p>VX</p>",
+                "five": "<p>XZVCX</p>",
+                "select": "{\"A\": \"Z\", \"B\": \"Z\", \"C\": \"Z\", \"D\": \" Z\", \"E\": \"C\", \"F\": \"C\", \"G\": \"Z\"}",
+                "is_deleted": false,
+                "tureid_id": 1,
+                "info": [
+                    {
+                        "id": 56,
+                        "thispoint__info": null,
+                        "right": "A",
+                        "analysis": "A",
+                        "value": 5,
+                        "location": 1
+                    },
+                    {
+                        "id": 57,
+                        "thispoint__info": null,
+                        "right": "B",
+                        "analysis": "B",
+                        "value": 5,
+                        "location": 2
+                    },
+                    {
+                        "id": 58,
+                        "thispoint__info": null,
+                        "right": "C",
+                        "analysis": "C",
+                        "value": 5,
+                        "location": 3
+                    },
+                    {
+                        "id": 59,
+                        "thispoint__info": null,
+                        "right": "D",
+                        "analysis": "D",
+                        "value": 5,
+                        "location": 4
+                    },
+                    {
+                        "id": 60,
+                        "thispoint__info": null,
+                        "right": "E",
+                        "analysis": "E",
+                        "value": 5,
+                        "location": 5
+                    }
+                ]
+            },
+            "thiswa": {
+                "id": 10,
+                "tureid_id": 1,
+                "is_deleted": false,
+                "detail": "<p>AAAA</p>",
+                "image": "",
+                "templatearticle": "BBBB"
+            },
+            "thiswb": {
+                "id": 7,
+                "tureid_id": 1,
+                "is_deleted": false,
+                "detail": "<p>BBBB</p>",
+                "image": "",
+                "templatearticle": "CCCC"
+            }
+        }
+    }
+}

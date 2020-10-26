@@ -30,63 +30,87 @@
       "current": 0,
       "list": [
         {
-          "name": "模拟题",
+          "name": "我",
           "query": "",
           "id": 0,
+          "pathName": "pages/my/my"
+        },
+        {
+          "name": "我的听力测试",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/my/listen/listen"
+        },
+        {
+          "name": "我的单词测试",
+          "query": "",
+          "id": 2,
+          "pathName": "pages/my/word/word"
+        },
+        {
+          "name": "真题列表",
+          "query": "",
+          "id": 3,
+          "pathName": "pages/exam/true/true"
+        },
+        {
+          "name": "模拟题",
+          "query": "id=1",
+          "id": 4,
           "pathName": "pages/exam/paper/paper"
         },
         {
           "name": "阅读PartC",
           "query": "",
-          "id": 1,
+          "id": 5,
           "pathName": "pages/exam/paper/read-C/read-C"
         },
         {
           "name": "阅读PartB",
           "query": "",
-          "id": 2,
+          "id": 6,
           "pathName": "pages/exam/paper/read-B/read-B"
         },
         {
           "name": "写作PartA",
           "query": "",
-          "id": 3,
+          "id": 7,
           "pathName": "pages/exam/paper/write-A/write-A"
         },
         {
           "name": "写作PartB",
           "query": "",
-          "id": 4,
+          "id": 8,
           "pathName": "pages/exam/paper/write-B/write-B"
         },
         {
           "name": "阅读PartA",
           "query": "",
-          "id": 5,
+          "id": 9,
           "pathName": "pages/exam/paper/read-A/read-A"
         },
         {
           "name": "听力PartB",
           "query": "",
-          "id": 6,
+          "id": 10,
           "pathName": "pages/exam/paper/listen-B/listen-B"
         },
         {
           "name": "听力PartA",
           "query": "",
-          "id": 7,
+          "id": 11,
           "pathName": "pages/exam/paper/listen-A/listen-A"
         },
         {
           "name": "听力测试",
           "query": "",
-          "id": 8,
+          "id": 12,
           "pathName": "pages/exam/listen/listen"
         },
         {
           "name": "单词测试",
           "query": "",
-          "id": 9,
+          "id": 13,
           "pathName": "pages/exam/word/word"
         }
       ]

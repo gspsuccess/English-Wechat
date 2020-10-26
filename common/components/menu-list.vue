@@ -1,5 +1,7 @@
 <template>
 	<view>
+		<tui-fab :left="left" :right="right" :bottom="bottom" :bgColor="bgColor" :btnList="btnList" @click="lDrawer"></tui-fab>
+		<!--左抽屉-->
 		<tui-drawer mode="left" :visible="leftDrawer" @close="closeDrawer">
 			<view class="d-container">
 				<view class="tree">
@@ -13,19 +15,23 @@
 
 <script>
 import {Config} from '@/common/config'
-const menuList = Config.menuList	
+const menuList = uni.getStorageSync('paper_menu')	
 import mixTree from '@/components/mix-tree/mix-tree'
+
 export default {
 	components: {
 		mixTree
 	},
 	mounted(){
-		setTimeout(() => {
-			this.treeList = menuList;
-		}, 500);
+		this.treeList = menuList;
 	},
 	data() {
 		return {
+			left: 0,
+			right: 64,
+			bottom: 64,
+			bgColor: '#5677fc',
+			btnList: [],
 			leftDrawer: false,
 			treeList: [],
 			treeParams: {
@@ -49,16 +55,22 @@ export default {
 		},
 		//点击最后一级时触发该事件
 		treeItemClick(item) {
-			let { id, name, parentId } = item;
-			uni.showModal({
-				content: `点击了${parentId.length + 1}级菜单, ${name}, id为${id}, 父id为${parentId.toString()}`
-			});
-			console.log(item);
+			let { id, name, parentId, namekey } = item
+			
+			let url = 'exam-paper-' + namekey
+			this.router.push(url,{openType:"redirect",query:{id:id,name:name}})
+		},
+		valueChange(index){
+			let data = this.$refs.subject[index].get();   // 组件返回的数据
 		}
 	}
 }
 </script>
 
-<style>
-	
+<style lang="stylus">
+.d-container
+	width 400rpx
+	padding 48rpx 30rpx
+	.tree
+		margin-bottom 64rpx	
 </style>

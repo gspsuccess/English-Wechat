@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "测试中心",
+  "usingComponents": {
+    "tui-card": "/components/thorui/tui-card/tui-card",
+    "tui-icon": "/components/thorui/tui-icon/tui-icon"
+  }
+}

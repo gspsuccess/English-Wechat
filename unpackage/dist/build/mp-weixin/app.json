@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/exam/exam",
+    "pages/my/my",
+    "pages/exam/word/word",
+    "pages/exam/listen/listen",
+    "pages/exam/paper/paper",
+    "pages/exam/paper/listen-A/listen-A",
+    "pages/exam/paper/listen-B/listen-B",
+    "pages/exam/paper/read-A/read-A",
+    "pages/exam/paper/read-B/read-B",
+    "pages/exam/paper/write-A/write-A",
+    "pages/exam/paper/write-B/write-B",
+    "pages/exam/paper/read-C/read-C",
+    "pages/exam/true/true",
+    "pages/my/word/word",
+    "pages/my/listen/listen"
+  ],
+  "subPackages": [],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#5677FC",
+    "navigationBarTitleText": "NETS考试中心",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fafafa",
+    "backgroundColorTop": "#fafafa",
+    "backgroundColorBottom": "#fafafa"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#5677FC",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "品牌",
+        "iconPath": "static/images/tabbar/company_gray.png",
+        "selectedIconPath": "static/images/tabbar/company_active.png"
+      },
+      {
+        "pagePath": "pages/exam/exam",
+        "text": "测试",
+        "iconPath": "static/images/tabbar/exam_gray.png",
+        "selectedIconPath": "static/images/tabbar/exam_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "static/images/tabbar/my_gray.png",
+        "selectedIconPath": "static/images/tabbar/my_active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位效果展示"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

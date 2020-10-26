@@ -1,57 +1,29 @@
 <template>
 	<view class="container">
 		<view class="top-container">
-			<image class="bg-img" src="/static/images/my/mine_bg_3x.png"></image>
-			<view @tap="logout" class="logout" hover-class="opcity" :hover-stay-time="150">
-				<image class="logout-img" src="/static/images/my/icon_out_3x.png" v-show="isLogin"></image>
-				<text class="logout-txt" v-show="isLogin">退出</text>
-			</view>
-			<view v-show="!isLogin" class="user-wrapper">
-				<navigator url="/pages/common/login/login" hover-class="opcity" :hover-stay-time="150" class="user">
-					<image class="avatar-img" src="/static/images/my/mine_def_touxiang_3x.png"></image>
-					<text class="user-info-mobile">请登录</text>
-				</navigator>
-			</view>
-			<view v-show="isLogin" class="user">
-				<image class="avatar-img" src="/static/images/my/mine_def_touxiang_3x.png"></image>
+			<view class="user">
+				<open-data type="userAvatarUrl" class="avatar-img"></open-data>
+				<view class="icon"></view>
 				<view class="user-info-mobile">
-					<text>{{ mobile }}</text>
-					<view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit">
-						<image src="/static/images/my/mine_icon_bianji_3x.png"></image>
-					</view>
+					<open-data type="userNickName"></open-data>
 				</view>
 			</view>
 		</view>
 		<view class="bottom-container">
 			<view class="ul-item">
-				<view @tap="tapEvent" data-index="2" data-key="word" class="item" hover-class="opcity" :hover-stay-time="150">
+				<view @tap="tapEvent" data-url="my-word" class="item" hover-class="opcity" :hover-stay-time="150">
 					<image class="item-img" src="http://img.intelirri.com/word.png"></image>
 					<text class="item-name">单词测试</text>
 				</view>
-				<view @tap="tapEvent" data-index="2" data-key="listen" class="item" hover-class="opcity" :hover-stay-time="150">
+				<view @tap="tapEvent" data-url="my-listen" class="item" hover-class="opcity" :hover-stay-time="150">
 					<image class="item-img" src="http://img.intelirri.com/listen.png"></image>
 					<text class="item-name">听力测试</text>
 				</view>
-				<view @tap="tapEvent" data-index="2" data-key="exam" class="item" hover-class="opcity" :hover-stay-time="150">
+				<view @tap="tapEvent" data-url="exam-true" class="item" hover-class="opcity" :hover-stay-time="150">
 					<image class="item-img" src="http://img.intelirri.com/exam.png"></image>
-					<text class="item-name">模拟考试</text>
+					<text class="item-name">真题测试</text>
 				</view>
 			</view>
-			<!-- <view class="ul-item">
-				<view @tap="previewReward" class="item" hover-class="opcity" :hover-stay-time="150">
-					<image class="item-img" src="/static/images/my/reward.png"></image>
-					<text class="item-name">赞赏</text>
-				</view>
-				<view class="item" hover-class="opcity" :hover-stay-time="150" @tap="feedback">
-					<button open-type="feedback" class="btn-feedback"></button>
-					<image class="item-img" src="/static/images/my/feedback.png"></image>
-					<text class="item-name">反馈</text>
-				</view>
-				<view @tap="tapEvent" data-index="3" class="item" hover-class="opcity" :hover-stay-time="150">
-					<image class="item-img" src="/static/images/my/log.png"></image>
-					<text class="item-name">日志</text>
-				</view>
-			</view> -->
 		</view>
 	</view>
 </template>
@@ -78,23 +50,8 @@
 				})
 			},
 			tapEvent(e) {
-				let index = e.currentTarget.dataset.index;
-				let url = '';
-				if (index == 1) {
-					url = '/pages/common/about/about';
-				} else if (index == 2) {
-					let key = e.currentTarget.dataset.key;
-					url = '/pages/index/maps/maps?key=' + key;
-					// #ifdef MP-QQ
-					this.tui.toast('功能开发中~');
-					return;
-					// #endif
-				} else {
-					url = '/pages/common/log/log';
-				}
-				uni.navigateTo({
-					url: url
-				});
+				let url = e.currentTarget.dataset.url
+				this.router.push(url)
 			}
 		}
 	};
@@ -111,6 +68,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		background: #5677FC;
 	}
 
 	.bg-img {
@@ -161,6 +119,18 @@
 		width: 160rpx;
 		height: 160rpx;
 		border-radius: 50%;
+		align-self: center;
+		position: relative;
+		margin-top:80rpx;
+	}
+	.icon{
+		position: absolute;
+		height: 160rpx;
+		width: 160rpx;
+		border-radius: 50%;
+		border: 36rpx solid #5677FC;
+		margin-top:80rpx;
+		top:-36rpx;
 		align-self: center;
 	}
 

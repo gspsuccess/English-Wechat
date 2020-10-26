@@ -4,6 +4,8 @@ class Config{
 	}
 }
 
+Config.SUCCESS = 1
+
 Config.voiceImgs = {
 	stop:'http://img.intelirri.com/voice.png',
 	play:'http://img.intelirri.com/voice.gif'

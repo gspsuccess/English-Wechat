@@ -12,13 +12,16 @@
     "pages/exam/paper/read-B/read-B",
     "pages/exam/paper/write-A/write-A",
     "pages/exam/paper/write-B/write-B",
-    "pages/exam/paper/read-C/read-C"
+    "pages/exam/paper/read-C/read-C",
+    "pages/exam/true/true",
+    "pages/my/word/word",
+    "pages/my/listen/listen"
   ],
   "subPackages": [],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#5677FC",
-    "navigationBarTitleText": "NETS英语服务平台",
+    "navigationBarTitleText": "NETS考试中心",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#fafafa",
     "backgroundColorTop": "#fafafa",
@@ -32,20 +35,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "品牌",
-        "iconPath": "static/images/tabbar/code_gray.png",
-        "selectedIconPath": "static/images/tabbar/code_active.png"
+        "iconPath": "static/images/tabbar/company_gray.png",
+        "selectedIconPath": "static/images/tabbar/company_active.png"
       },
       {
         "pagePath": "pages/exam/exam",
         "text": "测试",
-        "iconPath": "static/images/tabbar/extend_gray.png",
-        "selectedIconPath": "static/images/tabbar/extend_active.png"
+        "iconPath": "static/images/tabbar/exam_gray.png",
+        "selectedIconPath": "static/images/tabbar/exam_active.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我",
-        "iconPath": "static/images/tabbar/thor_gray.png",
-        "selectedIconPath": "static/images/tabbar/thor_active.png"
+        "iconPath": "static/images/tabbar/my_gray.png",
+        "selectedIconPath": "static/images/tabbar/my_active.png"
       }
     ]
   },

@@ -1,26 +1,27 @@
 <template>
-	<view>
+	<view v-if="current.detail">
+		<view class="time-wrapper">
+			{{timetranFormat}}
+		</view>
 		<view class="voice-wrapper">
 			<image class="voice" :src="voice" mode="" @click="broadcast()"></image>
-			<view class="content">{{data.content|formatContent}}</view>
+			<view class="content">{{current.detail|formatContent}}</view>
 			<view class="reply-wrapper">
 				<view class="title">请作答：</view>
-				<block v-for="item in options" :key="item">
-					<view class="option"><text>{{item + 1}}.</text><input type="text" v-model="answer[item].value"></view>
-				</block>
+				<view class="option"><input type="text" v-model="answer"></view>
 			</view>
 		</view>
 		<view class="answer-wrapper" v-if="showResult">
 			<tui-icon :name="item.name" :size="item.size" :color="item.color || '#999'"></tui-icon>
-			<text>{{answerResult}}</text>
+			<text>{{current.rightanswer}}</text>
 		</view>
 		<view class="btn-wrapper">
 			<view class="tui-btn-box">
-				<tui-button @click="submit">提交</tui-button>
+				<tui-button @click="submit" :loading="unusable" :disabled="unusable">{{submintTitie}}</tui-button>
 			</view>
-			<view class="tui-btn-box">
-				<tui-button type="white" @click="next" class="mt12">下一个</tui-button>
-			</view>
+		</view>
+		<view class="count-wrapper">
+			{{index+1}} / {{list.length}}
 		</view>
 	</view>
 </template>
@@ -36,29 +37,43 @@ export default {
 			return value.replace(/{!}/g,'_______')
 		}
 	},
-	created() {
-		 for (var i = 0; i < this.options; i++) {
-			var item = {value: ''};
-			this.answer.push(item);
-		}
-	},
 	data() {
 		return {
 			showResult:false,
-			answer:[],
-			data: {
-				content: 'Life is a journey, not the {!}, but the {!} along the should be and the mood at the view.',
-				voicefile: 'http://api.zesi.com.cn/word.mp3',
-				answer:['good','bad']
-			},
+			list:[],
+			index:0,
+			answer:'',
 			voice:voiceImgs.stop,
-			item: results.ok
+			item: results.ok,
+			unusable:false,
+			timetran:0,
+			result:{
+				rightnum:0,
+				errornum:0,
+				usetime:0,
+				level:5
+			},
+			interval:''
 		};
 	},
+	onLoad() {
+		this.getList()
+		this.getCurrentTime()
+	},
+	onUnload() {
+		clearInterval(this.interval)
+	},
 	methods: {
+		getList(){
+			this.tui.request('/user/listest','POST',{level:5}).then((res) => {
+				if(res.code === Config.SUCCESS){
+					this.list = res.results.data
+				}
+			})
+		},
 		broadcast() {
-			myaudio.src = this.data.voicefile;
-			myaudio.autoplay = true;
+			myaudio.src = this.current.voicefile
+			myaudio.autoplay = true
 
 			myaudio.play();
 
@@ -74,82 +89,79 @@ export default {
 		},
 		
 		submit(){
-			let result = this._checkAnswerIsRight()
-			this.showResult = true
-			if(result){
-				this.item = results.ok
-				this.answerResult = this.data.answer.join(',')
+			if(this.index < 19){
+				if(!this.answer){
+					this.tui.toast('请先提交本题答案')
+				} else {
+					this._action()
+					setTimeout(()=>this._next(),1000)
+				}
 			} else {
-				this.item = results.no
+				this._action()
+				clearInterval(this.interval)
+				this.result.usetime = this.timetran
+				this.tui.request('/user/lisresultcreate','POST',this.result).then((res) => {
+					if(res.code === Config.SUCCESS){
+						let content = `本次测试已提交，正确${this.result.rightnum}个，错误${this.result.errornum}个`
+						uni.showModal({
+							title:'测试结果',
+							content:content,
+							success: (res) => {
+								if(res.confirm){
+									uni.switchTab({
+										url:'/pages/exam/exam'
+									})
+								}
+							}
+						})
+					}
+				})
 			}
 		},
-		
-		next(){
-			this.data = {
-				content: 'Life is a journey, not the {!}, but the {!} along the should be and the mood at the view.',
-				voicefile: 'http://api.zesi.com.cn/word.mp3',
-				answer:['good','bad']
+		_action(){
+			this.showResult = true
+			this.unusable = true
+			if(this.current.rightanswer === this.answer){
+				this.item = results.ok
+				this.result.rightnum += 1
+			} else {
+				this.item = results.no
+				this.result.errornum += 1
 			}
-			this.answer = []
+		},
+		_next(){
+			this.index += 1
+			this.answer = ['']
 			this.showResult = false
+			this.unusable = false
+		},
+		getCurrentTime(){
+			this.interval = setInterval(() => {
+				this.timetran ++
+			},1000)
 		},
 		
 		_checkAnswerIsRight(){
-			return this.answerResult === this.util.arrayColumn(this.answer,'value').join(',')
+			return this.current.rightanswer === this.answer
 		},
-		
-		_getMatchNumbers(str,re){
-			return ((str || '').match(re) || []).length
-		}
 	},
 	computed:{
-		options(){
-			return this._getMatchNumbers(this.data.content,/{!}/g)
+		current(){
+			if(this.list.length > 0){
+				return this.list[this.index]
+			}
+			return {}
 		},
-		answerResult(){
-			return this.data.answer.join(',')
+		submintTitie(){
+			return this.index < 19?'提交并进入下一题':'提交测试结果'
+		},
+		timetranFormat(){
+			return this.util.formatSeconds(this.timetran)
 		}
 	}
 };
 </script>
 
 <style lang="stylus">
-.voice-wrapper
-	margin 32px auto 32px auto
-	text-align center
-	vertical-align middle
-	.voice
-		width 240rpx
-		height 240rpx
-	.content
-		margin 50rpx 50rpx 0 50rpx
-		text-align left
-		line-height 1.5
-		font-size 32rpx
-	.reply-wrapper	
-		margin 50rpx 50rpx 0 50rpx
-		text-align left
-		.title
-			font-size 32rpx
-			font-weight bold
-		.option
-			display flex
-			margin-top 24rpx
-			input
-				border-bottom 1px solid #ddd
-				margin-left auto
-				width 100%
-				text-align center
-.btn-wrapper
-	margin 50rpx
-	.tui-btn-box
-		margin-bottom 26rpx
-.answer-wrapper
-	display flex
-	text-align center
-	justify-content center
-	text
-		display inline-block
-		font-size 48rpx
-		margin-left 32rpx
+		
 </style>
